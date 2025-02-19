@@ -1,0 +1,263 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+header .subtitulo {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.imagen-header img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+section {
+    margin: 40px 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.productos-tabla {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.productos-tabla th, .productos-tabla td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.productos-tabla th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilo para formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-size: 16px;
+    color: #333;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Ajustes para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    header h1, header .subtitulo {
+        font-size: 28px;
+        margin: 0 0 15px 0;
+    }
+
+    .productos-tabla {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .productos-tabla th, .productos-tabla td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .imagen-header img {
+        max-width: 100%;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    form input, form textarea, form button {
+        font-size: 14px;
+    }
+}
+
+/* Estilos para pantallas pequeñas (móviles de menos de 480px) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .productos-tabla td {
+        font-size: 12px;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+/* Estilo para el icono del menú hamburguesa */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-icon span {
+    height: 4px;
+    background-color: white;
+    width: 100%;
+}
+
+/* Ocultar el menú por defecto en móviles */
+@media screen and (max-width: 768px) {
+    /* Hacer que el menú se oculte por defecto */
+    #menu {
+        display: none;
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    /* Mostrar el botón */
+    .menu-icon {
+        display: flex;
+    }
+}
+
+/* Mostrar el menú */
+.menu-icon.active + #menu {
+    display: flex;
+}
